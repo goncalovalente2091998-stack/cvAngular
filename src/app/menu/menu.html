@@ -1,0 +1,41 @@
+<div class="imagemTop w-100">
+  <img src="assets/pc.jpg" alt="Banner" class="img-fluid w-100">
+  <div class="overlay-blue"></div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm gradiente navbarBorda">
+  <div class="d-lg-none d-flex align-items-center ms-3">
+      <img src="assets/curriculos.png" width="37" class="me-2">  
+    </div>
+
+
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+    aria-controls="navbarNav" aria-expanded="{{!isCollapsed}}">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" [class.show]="!isCollapsed" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngFor="let item of navItems; let i = index"
+          [class.active]="activeItem === item.label"
+          (click)="setActivo(item.label)">
+        
+   <ng-container *ngIf="i === 0 && item.iconSrc">
+      <span class="d-none d-lg-flex align-items-center">
+        <img [src]="item.iconSrc" width="37" class="me-2">
+        <span class="nav-link p-0">{{ item.label }}</span>
+      </span>
+    </ng-container>
+
+        <ng-container *ngIf="i !== 0">
+          <a class="nav-link" [href]="item.link" [ngClass]="{'texto-branco': activeItem !== item.label}"
+          [routerLink]="[item.link]">
+            <i *ngIf="item.icon" class="{{ item.icon }} mr-1"></i>
+            {{ item.label }}
+          </a>
+        </ng-container>
+      </li>
+    </ul>
+  </div>
+</nav>

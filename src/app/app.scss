@@ -1,0 +1,28 @@
+.mainBackground {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: linear-gradient(270deg, #0d1b2a, #0c2038, #102246, #050b13);
+  background-size: 400% 400%;
+  animation: gradientFlow 30s ease infinite, brightnessPulse 10s ease-in-out infinite;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@keyframes brightnessPulse {
+  0% { filter: brightness(0.95); }
+  50% { filter: brightness(1.05); }
+  100% { filter: brightness(0.95); }
+}
+

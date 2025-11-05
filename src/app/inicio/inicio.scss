@@ -1,0 +1,96 @@
+
+
+
+.container-main {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+
+.fotoPerfil {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #12439f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.fotoPerfil:hover {
+  transform: scale(1.05);
+}
+
+
+.descricaoBox {
+  background: rgba(18, 67, 159, 0.1);
+  border: 2px solid #12439f;
+  border-radius: 20px;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.descricaoBox:hover {
+  transform: translateY(-3px);
+}
+
+
+.progress {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar.gradiente {
+  background: linear-gradient(90deg, #12439f, #3f7be1);
+  color: #fff;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 768px) {
+  .row.align-items-center.justify-content-center.g-3,
+  .row.align-items-start.justify-content-center.g-3 {
+    flex-direction: column !important;
+  }
+
+  .col-12.col-md-5,
+  .col-12.col-md-7 {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .fotoPerfil {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .descricaoBox {
+    padding: 15px;
+    margin-bottom: 1rem;
+  }
+
+  .progress {
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fotoPerfil {
+    width: 150px;
+    height: 150px;
+  }
+
+  .descricaoBox {
+    padding: 10px;
+  }
+
+  .progress {
+    height: 18px;
+  }
+}
